@@ -4,35 +4,41 @@ Bem-vindo ao Registro de Usuários! Para começar, siga as instruções abaixo.
 
 ## Configuração do Ambiente
 
-1. **Clone o repositório para o seu ambiente local:**
+### **Clone o repositório para o seu ambiente local:**
     ```bash
     git clone https://github.com/rickgrana/registeruser.git
     cd registeruser
     ```
 
-2. **Renomeie o arquivo `.env.example` para `.env`:**
+### **Renomeie o arquivo `.env.example` para `.env`:**
     ```bash
     mv .env.example .env
     ```
 
-    Certifique-se de configurar corretamente as variáveis de ambiente no arquivo `.env`.
+- Certifique-se de configurar corretamente as variáveis de ambiente no arquivo `.env`.
 
-## Docker Compose
-
+- Este projeto roda sobre uma estrutura Docker. 
 Certifique-se de ter o Docker e o Docker Compose instalados em seu sistema antes de prosseguir.
 
-1. **Construa e execute as instâncias Docker:**
+### **Construa e execute as instâncias Docker:**
     ```bash
     docker compose up --build
     ```
 
-    Este comando irá construir as imagens necessárias e iniciar os contêineres.
+- Este comando irá construir as imagens necessárias e iniciar os contêineres.
+- Aguarde a instalação e execução das migrations para começar
 
-2. **Acesse o seu aplicativo em [http://localhost:8000](http://localhost:8000).**
+## Acessando a aplicação
+Acesse a aplicação em: [http://localhost:8000/auth/register](http://localhost:8000/auth/register)
 
-## Contribuição
 
-Se você deseja contribuir para este projeto, por favor, siga as diretrizes de contribuição no arquivo [CONTRIBUTING.md](CONTRIBUTING.md).
+## Executando Testes
+
+Para executar testes, utilize o seguinte comando:
+   ```bash
+   docker exec firstdecision-app php artisan test
+   ```
+
 
 ## Problemas e Suporte
 
