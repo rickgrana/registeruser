@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:latest
+    container_name: firstdecision-db
+    environment:
+      POSTGRES_DB: firstdecision
+      POSTGRES_USER: firstdecision
+      POSTGRES_PASSWORD: firstdecision
+    networks:
+      - firstdecision
+
+  # Laravel Application
+  app:
+    container_name: firstdecision-app
+    image: firstdecision-app:1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        uid: 1000
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8000:80"
+    depends_on:
+      - postgres
+    networks:
+      - firstdecision
+
+networks:
+  firstdecision:
+
