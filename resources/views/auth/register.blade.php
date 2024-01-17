@@ -69,7 +69,7 @@
         </div>
 
         <label for="name">Nome:</label>
-        <input type="text" name="name" required minlength="3" maxlength="50" value="{{ data_get($data, 'name') }}">
+        <input type="text" name="name" required minlength="3" maxlength="50">
 
         <label for="email">E-mail:</label>
         <input type="email" name="email" required>
